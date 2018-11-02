@@ -1,8 +1,0 @@
-mymonitor.lo: /data1/www/htdocs/php-5.4.1/ext/mymonitor/mymonitor.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/data1/www/htdocs/php-5.4.1/ext/mymonitor $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /data1/www/htdocs/php-5.4.1/ext/mymonitor/mymonitor.c -o mymonitor.lo 
-$(phplibdir)/mymonitor.la: ./mymonitor.la
-	$(LIBTOOL) --mode=install cp ./mymonitor.la $(phplibdir)
-
-./mymonitor.la: $(shared_objects_mymonitor) $(MYMONITOR_SHARED_DEPENDENCIES)
-	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_mymonitor) $(MYMONITOR_SHARED_LIBADD)
-
